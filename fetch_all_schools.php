@@ -12,5 +12,6 @@ foreach($all_schools as &$school){
     $school["school_name"] = htmlspecialchars($school["school_name"]);
     $school["checked"] = (isset($_SESSION["input"]["schools"]) and in_array($school["school_id"], $_SESSION["input"]["schools"])) ? "checked" : "";
 }
+unset($school);
 
 ?>
