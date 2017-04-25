@@ -1,7 +1,7 @@
 <?php
 
-require_once("conf.php");
 require_once("alert_class.php");
+require_once("conf.php");
 
 # Store POSTed values in SESSION just in case registration fails
 $_SESSION["input"] = $_POST;
