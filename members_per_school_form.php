@@ -4,7 +4,7 @@ require_once("fetch_all_schools.php");
 
 ?>
 
-<form action="members_per_school.php" method="post" class="form-inline">
+<form action="../members_per_school.php" method="post" class="form-inline">
     <div class="form-group">
         <label for="school">
             School
