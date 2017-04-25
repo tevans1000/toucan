@@ -3,7 +3,7 @@
 if (isset($_SESSION["requested_school"])){
     ?>
     <h2>
-        List of members for <?=$_SESSION["requested_school"]?>
+        Members registered with <?=$_SESSION["requested_school"]?>
     </h2>
     <?php
     if (count($_SESSION["members"]) == 0){
