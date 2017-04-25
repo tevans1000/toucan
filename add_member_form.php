@@ -7,7 +7,7 @@ $name_default = !empty($_SESSION["input"]["member_name"]) ? "value=" . htmlspeci
 
 ?>
 
-<form action="add_member.php" method="post" class="form-horizontal">
+<form action="../add_member.php" method="post" class="form-horizontal">
     <div class="form-group">
         <label class="control-label col-sm-2" for="email">
             Email
