@@ -29,18 +29,36 @@ if (isset($_SESSION["alerts"])){
         }
     }
     ?>
-    <h1>Add member</h1>
-    <?php
-    include("../add_member_form.php");
-    ?>
-    <hr>
-    <h1>List members per school</h1>
-    <?php
-    include("../members_per_school_form.php");
-    ?>
-    <hr>
-    <?php
-    include("../members_per_school_table.php");
-    ?>
+    <ul class="nav nav-tabs">
+        <li class="active">
+            <a data-toggle="tab" href="#add_member">
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+        </li>
+        <li>
+            <a data-toggle="tab" href="#members_per_school">
+                <span class="glyphicon glyphicon-th-list"></span>
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div id="add_member" class="tab-pane active">
+            <h1>
+                Add member
+            </h1>
+            <?php
+            include("../add_member_form.php");
+            ?>
+        </div>
+        <div id="members_per_school" class="tab-pane">
+            <h1>
+                List members per school
+            </h1>
+            <?php
+            include("../members_per_school_form.php");
+            include("../members_per_school_table.php");
+            ?>
+        </div>
+    </div>
 </div></body>
 </html>
