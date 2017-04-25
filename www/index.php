@@ -1,7 +1,13 @@
 <?php
 
+require_once("../alert_class.php");
 require_once("../conf.php");
 require_once("../fetch_all_schools.php");
+
+if (isset($_SESSION["alerts"])){
+    $alerts = $_SESSION["alerts"];
+    unset($_SESSION["alerts"]);
+}
 
 ?>
 
@@ -16,6 +22,13 @@ require_once("../fetch_all_schools.php");
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body><div class="container-fluid">
+    <?php
+    if (isset($alerts)){
+        foreach ($alerts as $alert){
+            echo($alert->to_bootstrap());
+        }
+    }
+    ?>
     <h1>Add member</h1>
     <?php
     include("../add_member_form.php");
