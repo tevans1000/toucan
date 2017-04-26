@@ -1,8 +1,8 @@
 <?php
 
-require_once("../alert_class.php");
-require_once("../conf.php");
-require_once("../fetch_all_schools.php");
+require_once("../scripts/alert_class.php");
+require_once("../scripts/conf.php");
+require_once("../scripts/fetch_all_schools.php");
 
 if (isset($_SESSION["alerts"])){
     $alerts = $_SESSION["alerts"];
@@ -47,7 +47,7 @@ if (isset($_SESSION["alerts"])){
                 Add member
             </h1>
             <?php
-            include("../add_member_form.php");
+            include("../templates/add_member_form.php");
             ?>
         </div>
         <div id="members_per_school" class="tab-pane">
@@ -55,8 +55,8 @@ if (isset($_SESSION["alerts"])){
                 List members per school
             </h1>
             <?php
-            include("../members_per_school_form.php");
-            include("../members_per_school_table.php");
+            include("../templates/members_per_school_form.php");
+            include("../templates/members_per_school_table.php");
             ?>
         </div>
     </div>

@@ -39,7 +39,7 @@ if (empty($_POST["schools"])){
 if (empty($email) or empty($schools)){
     $_SESSION["alerts"] = $alerts;
     session_commit();
-    header('Location: www');
+    header('Location: ../www');
     exit();
 }
 
@@ -55,7 +55,7 @@ if ($is_new_member){
         $alerts[] = new Alert("Name is required for new members", "warning");
         $_SESSION["alerts"] = $alerts;
         session_commit();
-        header('Location: www');
+        header('Location: ../www');
         exit();
     }
     # create a new member and get the member_id
@@ -73,7 +73,7 @@ if ($is_new_member){
         $alerts[] = new Alert("\"$name\" can't register using \"$email\" as \"$current_name\" is already registered using that email address. The database has not been updated.", "warning");
         $_SESSION["alerts"] = $alerts;
         session_commit();
-        header('Location: www');
+        header('Location: ../www');
         exit();
     } else {
         $alerts[] = new Alert("\"$current_name\" is already registered using \"$email\". New memberships will be added and old memberships will be unaffected.", "info");
@@ -101,7 +101,7 @@ if ($registration_suceeded){
 
 $_SESSION["alerts"] = $alerts;
 session_commit();
-header('Location: www');
+header('Location: ../www');
 exit();
 
 ?>

@@ -1,10 +1,10 @@
 <?php
 
-require_once("fetch_all_schools.php");
+require_once("../scripts/fetch_all_schools.php");
 
 ?>
 
-<form action="../members_per_school.php" method="post" class="form-inline">
+<form action="../scripts/members_per_school.php" method="post" class="form-inline">
     <div class="form-group">
         <label for="school">
             School

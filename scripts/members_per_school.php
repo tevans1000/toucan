@@ -13,13 +13,13 @@ if (!isset($_POST["school"])){
     $alerts[] = new Alert("School is missing", "danger");
     $_SESSION["alerts"] = $alerts;
     session_commit();
-    header('Location: www');
+    header('Location: ../www');
     exit();
 } elseif (!filter_var($_POST["school"], FILTER_VALIDATE_INT)){
     $alerts[] = new Alert("Invalid input for school", "danger");
     $_SESSION["alerts"] = $alerts;
     session_commit();
-    header('Location: www');
+    header('Location: ../www');
     exit();
 }
 $query = $db->prepare("SELECT school_name FROM schools WHERE school_id = :school");
@@ -30,7 +30,7 @@ if ($query->rowCount() == 0){
     $alerts[] = new Alert("School not found", "danger");
     $_SESSION["alerts"] = $alerts;
     session_commit();
-    header('Location: www');
+    header('Location: ../www');
     exit();
 }
 $school_name = $query->fetch(PDO::FETCH_ASSOC)["school_name"];
@@ -50,7 +50,7 @@ unset($member);
 $_SESSION["members"] = $members;
 $_SESSION["alerts"] = $alerts;
 session_write_close();
-header('Location: www');
+header('Location: ../www');
 exit();
 
 ?>

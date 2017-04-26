@@ -1,13 +1,13 @@
 <?php
 
-require_once("fetch_all_schools.php");
+require_once("../scripts/fetch_all_schools.php");
 
 $email_default = !empty($_SESSION["input"]["email"]) ? "value=" . htmlspecialchars($_SESSION["input"]["email"]) : "";
 $name_default = !empty($_SESSION["input"]["member_name"]) ? "value=" . htmlspecialchars($_SESSION["input"]["member_name"]) : "";
 
 ?>
 
-<form action="../add_member.php" method="post" class="form-horizontal">
+<form action="../scripts/add_member.php" method="post" class="form-horizontal">
     <div class="form-group">
         <label class="control-label col-sm-2" for="email">
             Email
