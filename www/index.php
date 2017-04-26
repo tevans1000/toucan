@@ -8,6 +8,16 @@ if (isset($_SESSION["alerts"])){
     $alerts = $_SESSION["alerts"];
     unset($_SESSION["alerts"]);
 }
+if(isset($_SESSION["focus"])){
+    $focus_tab =  $_SESSION["focus"];
+    unset($_SESSION["focus"]);
+} else {
+    $focus_tab =  "add_member";
+}
+$active = [];
+foreach (["add_member", "members_per_school"] as $tab){
+    $active[$tab] = ($tab == $focus_tab) ? "active" : "";
+}
 
 ?>
 
@@ -30,19 +40,19 @@ if (isset($_SESSION["alerts"])){
     }
     ?>
     <ul class="nav nav-tabs">
-        <li class="active">
+        <li class="<?=$active["add_member"]?>">
             <a data-toggle="tab" href="#add_member">
                 <span class="glyphicon glyphicon-plus"></span>
             </a>
         </li>
-        <li>
+        <li class="<?=$active["members_per_school"]?>">
             <a data-toggle="tab" href="#members_per_school">
                 <span class="glyphicon glyphicon-th-list"></span>
             </a>
         </li>
     </ul>
     <div class="tab-content">
-        <div id="add_member" class="tab-pane active">
+        <div id="add_member" class="tab-pane <?=$active["add_member"]?>">
             <h1>
                 Add member
             </h1>
@@ -50,7 +60,7 @@ if (isset($_SESSION["alerts"])){
             include("../templates/add_member_form.php");
             ?>
         </div>
-        <div id="members_per_school" class="tab-pane">
+        <div id="members_per_school" class="tab-pane <?=$active["members_per_school"]?>">
             <h1>
                 List members per school
             </h1>

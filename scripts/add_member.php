@@ -6,6 +6,9 @@ require_once("conf.php");
 # Store POSTed values in SESSION just in case registration fails
 $_SESSION["input"] = $_POST;
 
+// Specify tab to focus on when script exits
+$_SESSION["focus"] = "add_member";
+
 $alerts = [];
 
 # Email validation

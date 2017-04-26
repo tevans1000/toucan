@@ -6,6 +6,9 @@ require_once("conf.php");
 # Store POSTed values in SESSION just in case registration fails
 $_SESSION["input"] = $_POST;
 
+// Specify tab to focus on when script exits
+$_SESSION["focus"] = "members_per_school";
+
 $alerts = [];
 
 # Check school exists
@@ -47,6 +50,7 @@ foreach ($members as &$member){
     $member["member_email"] = htmlspecialchars($member["member_email"]);
 }
 unset($member);
+
 $_SESSION["members"] = $members;
 $_SESSION["alerts"] = $alerts;
 session_write_close();
