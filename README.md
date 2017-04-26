@@ -16,6 +16,7 @@ The weberver used for development was a WAMP stack:
   * Apache 2.4.23
   * MySQL 5.7.14
   * PHP 7.0.10
+
 It will probably work on a LAMP stack too.
 
 ###  Initialising the database  ######################################
